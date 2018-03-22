@@ -10,12 +10,37 @@
 		<link rel="icon" href="images/262_files.ico" type="image/x-icon">
 		<!-- CSS code here -->
 		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/modal.css">
 		<!-- JavaScript code here -->
 	</head>
 		<!-- Body Section Starts Here -->
 	<body background="images/bgimage_1.png" id="bodybg">
-		<div class="modal">
-			
+		<div class="popup_res">
+			<div id="id01" class="modal">
+				<form class="modal-content animate" action="#">
+					
+					<div class="container">
+						<label><b>Date of Reservation:</b></label><input type="date" placeholder="Enter Username" required>
+						<fieldset>
+							<legend>Reservation Info:</legend>
+							<label><b>Name:</b></label><input type="text" placeholder="Enter Password" required>
+							<label><b></b></label>
+						</fieldset>
+					</div>
+
+					<div class="container" style="background-color: #f1f1f1">
+						<button class="btn" type="submit">Save</button><button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn">Cancel</button>
+					</div>
+				</form>
+			</div>
+			<script>
+				var modal = document.getElementById('id01');
+				window.onclick = function(event) {
+					if (event.target == modal) {
+						modal.style.display = "none";
+					}
+				}
+			</script>
 		</div>
 
 		<nav class="nav-list">
@@ -48,11 +73,9 @@
 						<a href="pages/faqs.html">FAQs</a>
 					</li>
 				</ul>
-				<button id="resbtn">Reserve</button>
+				<button onclick="document.getElementById('id01').style.display='block'" id="resbtn">Reserve</button>
 			</div>
 		</nav>
-<!--
-<hr width="95%" style="height: 4px; background-color: red; border-radius: 25px;">-->
 
 		<footer>
 			<i>Copyright:</i> &nbsp; <big>Richard Alphege A. Ravalo, RL</big> | IBED - Junior Librarian | Sacred Heart College of Lucena, Inc. |
