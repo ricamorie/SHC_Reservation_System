@@ -20,10 +20,37 @@
 				<form class="modal-content animate" action="#">
 					
 					<div class="container">
-						<label><b>Date of Reservation:</b></label><input type="date" placeholder="Enter Username" required>
+						<label><b>Date of Reservation:</b></label>
+						<input type="date" required style="font-weight: bold; text-align: center; font-size: 16px">
+						<span class="selection">
+							<label><b>Viewing Room:</b></label>
+							<select name="viewing_room" id="selector">
+								<option> - - Select Viewing Room - - </option>
+								<option value="avr_viewroom_1">AVR - Viewing Room 1</option>
+								<option value="avr_viewroom_2">AVR - Viewing Room 2</option>
+								<option value="avr_viewroom_3">AvR - Viewing Room 3</option>
+								<option value="avr_viewroom_4">AVR - Viewing Room 4</option>
+								<option value="avr_viewroom_5">AVR - Viewing Room 5</option>
+								<option value="avr_viewroom_6">AVR - Viewing Room 6</option>
+								<option value="ibed_viewroom_1">IBED - Viewing Room 1</option>
+								<option value="ibed_viewroom_2">IBED - Viewing Room 2</option>
+								<option value="ibed_viewroom_3">IBED - Viewing Room 3</option>
+							</select>
+						</span>
 						<fieldset>
 							<legend>Reservation Info:</legend>
-							<label><b>Name:</b></label><input type="text" placeholder="Enter Password" required>
+							<span id="name">
+								<label><b>Name:</b></label>
+								<input type="text" placeholder="Enter Name" required>
+							</span>
+							<div id="modal-left">
+								<label type="text"><b>Teacher/Professor:</b></label>
+								<input type="text" placeholder="Teacher/Professor's Name" required>
+							</div>
+
+							<div id="modal-right">
+								
+							</div>
 							<label><b></b></label>
 						</fieldset>
 					</div>
