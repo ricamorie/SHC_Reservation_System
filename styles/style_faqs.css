@@ -5,6 +5,12 @@ h1 {
 }
 
 /*Accordion Style*/
+.acc-content {
+	width: 95%;
+	align-self: center;
+	margin: 0 auto 0 auto;
+}
+
 .accordion {
 	background-color: #857F7F;
 	color: white;

@@ -21,7 +21,7 @@
 					
 					<div class="container">
 						<label><b>Date of Reservation:</b></label>
-						<input type="date" required style="font-weight: bold; text-align: center; font-size: 16px">
+						<input type="date" required autofocus style="font-weight: bold; font-size: 16px; width: 150px">
 						<span class="selection">
 							<label><b>Viewing Room:</b></label>
 							<select name="viewing_room" id="selector">
@@ -41,15 +41,44 @@
 							<legend>Reservation Info:</legend>
 							<span id="name">
 								<label><b>Name:</b></label>
-								<input type="text" placeholder="Enter Name" required>
-							</span>
-							<div id="modal-left">
+								<input type="text" placeholder="Enter Name" id="namer"required>
 								<label type="text"><b>Teacher/Professor:</b></label>
 								<input type="text" placeholder="Teacher/Professor's Name" required>
-							</div>
+							</span>
+						<br><br>
+							<span class="resinfo">
+								<label style="font-size: 18px"><b>Reservation Date:</b></label>
+								<input type="date" required>
+							</span>
 
-							<div id="modal-right">
-								
+							<span class="resinfo">
+								<label style="font-size: 18px"><b>Reservation Time:</b></label>
+								<input type="time" required>
+							</span>
+
+							<span class="resinfo">
+								<label style="font-size: 18px"><b>Number of Students:</b></label>
+								<input type="number" style="width: 60px">
+							</span>
+						<br><br>
+						<hr style="width: 95%; height: 2">
+							<div id="modal-bottom">
+								<label><b>Equipment Needed:</b></label><br><br>
+									<span class="equips_1">
+										<input type="checkbox" name="eq1">Microphone
+									</span>
+
+									<span class="equips_2">
+										<input type="checkbox" name="eq2">Speaker/Karaoke
+									</span>
+
+									<span class="equips_3">
+										<input type="checkbox" name="eq3">Projector
+									</span>
+
+									<span class="equips_4">
+										<input type="checkbox" name="eq4">Computer
+									</span>
 							</div>
 							<label><b></b></label>
 						</fieldset>

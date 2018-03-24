@@ -9,11 +9,13 @@
 	width: 100%;
 }
 
+/*Body Style*/
 #bodybg {
 	background-blend-mode: blur(25px);
 	margin-top: 35px;
 }
 
+/*Navigation Pane Style*/
 .nav-page ul {
 	text-decoration: none;
 	list-style-type: none;
@@ -47,6 +49,7 @@
 	border-radius: 15px 15px 15px 15px;
 }
 
+/*Reservation Button*/
 #resbtn {
 	position: absolute;
 	top: 1;
@@ -96,8 +99,8 @@ td:hover:not(.time) {
 	transition: transform .4s;
 	transform: scale(1.2);
 	color: white;
-	border: 1px solid gray;
-	box-shadow: 0px 8px 16px 0px;
+	border: 0 solid black;
+	box-shadow: 0px 8px 16px 0px gray;
 }
 
 .time {

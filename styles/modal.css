@@ -9,21 +9,31 @@ input[type=text] {
 	box-sizing: border-box;
 }
 
+.equips_1,
+.equips_2,
+.equips_3,
+.equips_4 {
+	display: inline-block;
+	font-style: italic;
+	font-size: 17px;
+	margin: 0 7px 0 9%;
+}
+
+.resinfo {
+	margin: 0 0 0 1.5%;
+}
+
 .selection {
 	float: right;
 	font-weight: bold;
 	font-size: 16px;
 }
 
-#name {
-	float: center;
-}
-
 /* Set a style for all buttons */
 button:not(#resbtn) {
 	background-color: #48d1cc;
 	color: white;
-	padding: 14px 20px;
+	padding: 7px 10px;
 	margin: 0 2% 0 2%;
 	border: none;
 	cursor: pointer;
@@ -38,14 +48,9 @@ button:not(#resbtn) {
 	padding: 16px;
 }
 
-span.psw {
-	float: right;
-	padding-top: 16px;
-}
-
 /* Modal Background */
 .modal {
-	display: block;
+	display: none;
 	position: fixed;
 	z-index: 1;
 	left: 0;
@@ -53,14 +58,14 @@ span.psw {
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-	padding-top: 60px;
+	
 }
 
 .modal-content {
 	background-color: #fefefe;
-	margin: 5% auto 15% auto;
+	margin: 4% auto 0 auto;
 	border: 1px solid #888;
-	width: 85%;
+	width: 65%;
 }
 
 /*Zoom Animation*/
@@ -79,14 +84,3 @@ span.psw {
 	to {transform: scale(1);}
 }
 
-/*Responsiveness*/
-@media screen and(max-width: 300px) {
-	span.psw {
-		display: block;
-		float: none;
-	}
-
-	.cancelbtn {
-		width: 100%;
-	}
-}
