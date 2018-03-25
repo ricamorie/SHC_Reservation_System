@@ -10,10 +10,97 @@
 		<link rel="icon" href="../images/262_files.ico" type="image/x-icon">
 		<!-- CSS code here -->
 		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/modal.css">
 		<!-- JavaScript code here -->
 	</head>
-		<!-- Body Section Starts Here -->
-		<body background="../images/bgimage_1.png" id="bodybg">
+
+	<!-- Body Section Starts Here -->
+	<body background="../images/bgimage_1.png" id="bodybg">
+		<!-- Reservation Pop-Up -->
+		<div class="popup_res">
+			<div id="id01" class="modal">
+				<form class="modal-content animate" action="#">
+					<div class="container">
+						<label><b>Date of Reservation:</b></label>
+						<input type="date" required autofocus style="font-weight: bold; font-size: 16px; width: 150px">
+						<span class="selection">
+							<label><b>Viewing Room:</b></label>
+							<select name="viewing_room" id="selector">
+								<option> - - Select Viewing Room - - </option>
+								<option value="avr_viewroom_1">AVR - Viewing Room 1</option>
+								<option value="avr_viewroom_2">AVR - Viewing Room 2</option>
+								<option value="avr_viewroom_3">AvR - Viewing Room 3</option>
+								<option value="avr_viewroom_4">AVR - Viewing Room 4</option>
+								<option value="avr_viewroom_5">AVR - Viewing Room 5</option>
+								<option value="avr_viewroom_6">AVR - Viewing Room 6</option>
+								<option value="ibed_viewroom_1">IBED - Viewing Room 1</option>
+								<option value="ibed_viewroom_2">IBED - Viewing Room 2</option>
+								<option value="ibed_viewroom_3">IBED - Viewing Room 3</option>
+							</select>
+						</span>
+						<fieldset>
+							<legend>Reservation Info:</legend>
+							<span id="name">
+								<label><b>Name:</b></label>
+								<input type="text" placeholder="Enter Name" id="namer"required>
+								<label type="text"><b>Teacher/Professor:</b></label>
+								<input type="text" placeholder="Teacher/Professor's Name" required>
+							</span>
+						<br><br>
+							<span class="resinfo">
+								<label style="font-size: 18px"><b>Reservation Date:</b></label>
+								<input type="date" required>
+							</span>
+
+							<span class="resinfo">
+								<label style="font-size: 18px"><b>Reservation Time:</b></label>
+								<input type="time" required>
+							</span>
+
+							<span class="resinfo">
+								<label style="font-size: 18px"><b>Number of Students:</b></label>
+								<input type="number" style="width: 60px">
+							</span>
+						<br><br>
+						<hr style="width: 95%; height: 2">
+							<div id="modal-bottom">
+								<label><b>Equipment Needed:</b></label><br><br>
+									<span class="equips_1">
+										<input type="checkbox" name="eq1">Microphone
+									</span>
+
+									<span class="equips_2">
+										<input type="checkbox" name="eq2">Speaker/Karaoke
+									</span>
+
+									<span class="equips_3">
+										<input type="checkbox" name="eq3">Projector
+									</span>
+
+									<span class="equips_4">
+										<input type="checkbox" name="eq4">Computer
+									</span>
+							</div>
+							<label><b></b></label>
+						</fieldset>
+					</div>
+
+					<div class="container" style="background-color: #f1f1f1">
+						<button class="btn" type="submit">Save</button><button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn">Cancel</button>
+					</div>
+				</form>
+			</div>
+			<script>
+				var modal = document.getElementById('id01');
+				window.onclick = function(event) {
+					if (event.target == modal) {
+						modal.style.display = "none";
+					}
+				}
+			</script>
+		</div>
+
+		<!-- Navigation List -->
 		<nav class="nav-list">
 			<div class="nav-page">
 				<ul>
@@ -21,7 +108,7 @@
 						<a href="../index.html">Home</a>
 					</li>
 					<li class="dropdown">
-						<a class="dropbtn">Viewing Rooms</a>
+						<a class="dropbtn">AVR - Viewing Rooms</a>
 							<div class="dropdown-content">
 								<p>Audio Visual Room:</p>
 									<a href="avr_viewroom_1.html" id="active1">Viewing Room 1</a>
@@ -44,7 +131,7 @@
 						<a href="faqs.html">FAQs</a>
 					</li>
 				</ul>
-				<button id="resbtn">Reserve</button>
+				<button onclick="document.getElementById('id01').style.display='block'" id="resbtn">Reserve</button>
 			</div>
 		</nav>
 
@@ -137,7 +224,7 @@
 					<td class="time">11:00 - 11:30</td>
 					<td ></td>
 					<td></td>
-					<td id="res" rowspan="3" bgcolor="yellow">Ms. Sarah Francisco <br> PowerPoint Presentation <br> 2:00pm - 5:00pm</td>
+					<td></td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -146,20 +233,12 @@
 					<td class="time">11:30 - 12:00</td>
 					<td></td>
 					<td></td>
-					
 					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td class="time">12:30 - 1:00</td>
-					<td></td>
-					<td></td>
-					
 					<td></td>
 					<td></td>
 					<td></td>
 				</tr>
+				
 				<tr>
 					<td class="time">1:00 - 1:30</td>
 					<td></td>
@@ -189,16 +268,7 @@
 				</tr>
 
 				<tr>
-					<td class="time">2:39 - 3:00</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td class="time">3:00 - 3:30</td>
+					<td class="time">2:30 - 3:00</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -216,7 +286,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">4:00 - 4:15</td>
+					<td class="time">4:00 - 4:30</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -225,7 +295,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">4:15 - 4:30</td>
+					<td class="time">4:30 - 5:00</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -234,7 +304,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">4:30 - 4:45</td>
+					<td class="time">5:00 - 5:30</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -243,7 +313,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">4:45 - 5:00</td>
+					<td class="time">5:00 - 5:30</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -252,7 +322,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">5:00 - 5:15</td>
+					<td class="time">5:30 - 6:00</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -261,7 +331,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">5:15 - 5:30</td>
+					<td class="time">6:00 - 6:30</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -270,88 +340,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">5:30 - 5:45</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td class="time">5:45 - 6:00</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td class="time">6:00 - 6:15</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td class="time">6:15 - 6:30</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td class="time">6:30 - 6:45</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td class="time">6:45 - 7:00</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td class="time">7:00 - 7:15</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td class="time">7:15 - 7:30</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td class="time">7:30 - 7:45</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td class="time">7:45 - 8:00</td>
+					<td class="time">6:30 - 7:00</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -363,7 +352,7 @@
 		</div>
 
 		<footer align="center">
-			<i>Copyright:</i> <br>
+			<i>Copyright:</i>
 			<big>Richard Alphege A. Ravalo, RL</big> | IBED - Junior Librarian | Sacred Heart College of Lucena, Inc. |
 			(042) 710 3888 | (+63) 943 282 0995 | raravalo@up.edu.ph
 		</footer>

@@ -1,12 +1,6 @@
-/*Text Style*/
-h1 {
-	text-align: center;
-
-}
-
 /*Accordion Style*/
 .acc-content {
-	width: 95%;
+	width: 98%;
 	align-self: center;
 	margin: 0 auto 0 auto;
 }

@@ -30,7 +30,8 @@ input[type=text] {
 }
 
 /* Set a style for all buttons */
-button:not(#resbtn) {
+.btn {
+	display: inline-block;
 	background-color: #48d1cc;
 	color: white;
 	padding: 7px 10px;
@@ -38,10 +39,6 @@ button:not(#resbtn) {
 	border: none;
 	cursor: pointer;
 	width: 46%;
-}
-
-.btn {
-	display: inline-block;
 }
 
 .container {

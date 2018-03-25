@@ -11,10 +11,96 @@
 		<!-- CSS code here -->
 		<link rel="stylesheet" href="../styles/main.css">
 		<link rel="stylesheet" href="../styles/style_faqs.css">
+		<link rel="stylesheet" href="../styles/modal.css">
 		<!-- JavaScript code here -->
 	</head>
 		<!-- Body Section Starts Here -->
 	<body background="../images/bgimage_1.png" id="bodybg">
+		<!-- Reservation Pop-Up -->
+		<div class="popup_res">
+			<div id="id01" class="modal">
+				<form class="modal-content animate" action="#">
+					<div class="container">
+						<label><b>Date of Reservation:</b></label>
+						<input type="date" required autofocus style="font-weight: bold; font-size: 16px; width: 150px">
+						<span class="selection">
+							<label><b>Viewing Room:</b></label>
+							<select name="viewing_room" id="selector">
+								<option> - - Select Viewing Room - - </option>
+								<option value="avr_viewroom_1">AVR - Viewing Room 1</option>
+								<option value="avr_viewroom_2">AVR - Viewing Room 2</option>
+								<option value="avr_viewroom_3">AvR - Viewing Room 3</option>
+								<option value="avr_viewroom_4">AVR - Viewing Room 4</option>
+								<option value="avr_viewroom_5">AVR - Viewing Room 5</option>
+								<option value="avr_viewroom_6">AVR - Viewing Room 6</option>
+								<option value="ibed_viewroom_1">IBED - Viewing Room 1</option>
+								<option value="ibed_viewroom_2">IBED - Viewing Room 2</option>
+								<option value="ibed_viewroom_3">IBED - Viewing Room 3</option>
+							</select>
+						</span>
+						<fieldset>
+							<legend>Reservation Info:</legend>
+							<span id="name">
+								<label><b>Name:</b></label>
+								<input type="text" placeholder="Enter Name" id="namer"required>
+								<label type="text"><b>Teacher/Professor:</b></label>
+								<input type="text" placeholder="Teacher/Professor's Name" required>
+							</span>
+						<br><br>
+							<span class="resinfo">
+								<label style="font-size: 18px"><b>Reservation Date:</b></label>
+								<input type="date" required>
+							</span>
+
+							<span class="resinfo">
+								<label style="font-size: 18px"><b>Reservation Time:</b></label>
+								<input type="time" required>
+							</span>
+
+							<span class="resinfo">
+								<label style="font-size: 18px"><b>Number of Students:</b></label>
+								<input type="number" style="width: 60px">
+							</span>
+						<br><br>
+						<hr style="width: 95%; height: 2">
+							<div id="modal-bottom">
+								<label><b>Equipment Needed:</b></label><br><br>
+									<span class="equips_1">
+										<input type="checkbox" name="eq1">Microphone
+									</span>
+
+									<span class="equips_2">
+										<input type="checkbox" name="eq2">Speaker/Karaoke
+									</span>
+
+									<span class="equips_3">
+										<input type="checkbox" name="eq3">Projector
+									</span>
+
+									<span class="equips_4">
+										<input type="checkbox" name="eq4">Computer
+									</span>
+							</div>
+							<label><b></b></label>
+						</fieldset>
+					</div>
+
+					<div class="container" style="background-color: #f1f1f1">
+						<button class="btn" type="submit">Save</button><button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn">Cancel</button>
+					</div>
+				</form>
+			</div>
+			<script>
+				var modal = document.getElementById('id01');
+				window.onclick = function(event) {
+					if (event.target == modal) {
+						modal.style.display = "none";
+					}
+				}
+			</script>
+		</div>
+
+		<!-- Navigation List -->
 		<nav class="nav-list">
 			<div class="nav-page">
 				<ul>
@@ -45,11 +131,12 @@
 						<a href="faqs.html">FAQs</a>
 					</li>
 				</ul>
-				<button id="resbtn">Reserve</button>
+				<button onclick="document.getElementById('id01').style.display='block'" id="resbtn">Reserve</button>
 			</div>
 		</nav>
-
-		<h1><b><u>Frequently Asked Questions:</u></b></h1>
+		
+		<!-- Start of Content -->
+		<h1 style="width: 60%"><b><u>Frequently Asked Questions:</u></b></h1>
 		<hr>
 		<div class="acc-content">
 			<button class="accordion">Q: The reservation did not display</button>
@@ -76,12 +163,8 @@
 				</p>
 			</div>
 		</div>
-		<footer align="center">
-			<i>Copyright:</i> <br>
-			<big>Richard Alphege A. Ravalo, RL</big> | IBED - Junior Librarian | Sacred Heart College of Lucena, Inc. |
-			(042) 710 3888 | (+63) 943 282 0995 | raravalo@up.edu.ph
-		</footer>
 
+		<!-- Accordion JavaScript -->
 		<script type="text/JavaScript">
 			var acc = document.getElementsByClassName("accordion");
 			var i;
@@ -99,6 +182,13 @@
 				});
 			}
 		</script>
+
+		<!-- Footer -->
+		<footer align="center">
+			<i>Copyright:</i> <br>
+			<big>Richard Alphege A. Ravalo, RL</big> | IBED - Junior Librarian | Sacred Heart College of Lucena, Inc. |
+			(042) 710 3888 | (+63) 943 282 0995 | raravalo@up.edu.ph
+		</footer>
 		<!-- Live Reload Script -->
 		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	<!-- Body Section Ends Here -->

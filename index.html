@@ -15,10 +15,10 @@
 	</head>
 		<!-- Body Section Starts Here -->
 	<body background="images/bgimage_1.png" id="bodybg">
+		<!-- Reservation Pop-Up -->
 		<div class="popup_res">
 			<div id="id01" class="modal">
 				<form class="modal-content animate" action="#">
-					
 					<div class="container">
 						<label><b>Date of Reservation:</b></label>
 						<input type="date" required autofocus style="font-weight: bold; font-size: 16px; width: 150px">
@@ -98,7 +98,7 @@
 				}
 			</script>
 		</div>
-
+		<!-- Navigation List -->
 		<nav class="nav-list">
 			<div class="nav-page">
 				<ul>
@@ -132,7 +132,99 @@
 				<button onclick="document.getElementById('id01').style.display='block'" id="resbtn">Reserve</button>
 			</div>
 		</nav>
+		
+		<!-- Slideshow container -->
+		<div class="slideshow-container">
 
+			<!-- Full-width images with number and caption text -->
+			<div class="mySlides fade">
+				<img src="images/slide/img01.jpg" style="width:100%; height: 556px">
+				<div class="text">The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.</div>
+			</div>
+
+			<div class="mySlides fade">
+				<img src="images/slide/img02.jpg" style="width:100%; height: 556px">
+				<div class="text">Caption Two</div>
+			</div>
+
+			<div class="mySlides fade">
+				<img src="images/slide/img03.jpg" style="width:100%; height: 556px">
+				<div class="text">Caption Three</div>
+			</div>
+
+			<div class="mySlides fade">
+				<img src="images/slide/img04.jpg" style="width:100%; height: 556px">
+				<div class="text">Caption Three</div>
+			</div>
+
+			<div class="mySlides fade">
+				<img src="images/slide/img05.jpg" style="width:100%; height: 556px">
+				<div class="text">Caption Three</div>
+			</div>
+
+			<div class="mySlides fade">
+				<img src="images/slide/img06.jpg" style="width:100%; height: 556px">
+				<div class="text">Caption Three</div>
+			</div>
+		</div>
+	<br>
+		<!-- The dots/circles -->
+		<div style="text-align:center;">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+			<span class="dot" onclick="currentSlide(4)"></span>
+			<span class="dot" onclick="currentSlide(5)"></span>
+			<span class="dot" onclick="currentSlide(6)"></span>
+		</div>
+
+		<!-- Javascript for Image Slider -->
+		<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			// Next/previous controls
+			function plusSlides(n) {
+				showSlides(slideIndex += n);
+			}
+			// Thumbnail image controls
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				var dots = document.getElementsByClassName("dot");
+				if (n > slides.length) {
+					slideIndex = 1
+				} if (n < 1) {
+					slideIndex = slides.length
+				} for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				} for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				} slides[slideIndex-1].style.display = "block";
+				dots[slideIndex-1].className += " active";
+			}
+
+			var slideIndex = 0;
+			carousel();
+
+			function carousel() {
+				var i;
+				var x = document.getElementsByClassName("mySlides");
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+				} slideIndex++;
+				if (slideIndex > x.length) {
+					slideIndex = 1
+				} x[slideIndex-1].style.display = "block";
+				setTimeout(carousel, 5000); // Change image every 5 seconds
+}
+		</script>
+
+		<!-- Footer -->
 		<footer>
 			<i>Copyright:</i> &nbsp; <big>Richard Alphege A. Ravalo, RL</big> | IBED - Junior Librarian | Sacred Heart College of Lucena, Inc. |
 			(042) 710 3888 | (+63) 943 282 0995 | raravalo@up.edu.ph
