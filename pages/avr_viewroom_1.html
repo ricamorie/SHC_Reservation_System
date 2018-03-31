@@ -43,45 +43,50 @@
 							<span id="name">
 								<label><b>Name:</b></label>
 								<input type="text" placeholder="Enter Name" id="namer"required>
-								<label type="text"><b>Teacher/Professor:</b></label>
+								<label><b>Teacher/Professor:</b></label>
 								<input type="text" placeholder="Teacher/Professor's Name" required>
 							</span>
 						<br><br>
-							<span class="resinfo">
-								<label style="font-size: 18px"><b>Reservation Date:</b></label>
-								<input type="date" required>
+							<span class="resinfo"">
+								<label style="font-size: 18px"><b>Date:</b></label>
+								<input type="date" required style="margin-right: 10px; width: 120px"> to <input type="date" required style="margin-left: 10px">
 							</span>
 
 							<span class="resinfo">
-								<label style="font-size: 18px"><b>Reservation Time:</b></label>
-								<input type="time" required>
-							</span>
-
-							<span class="resinfo">
-								<label style="font-size: 18px"><b>Number of Students:</b></label>
-								<input type="number" style="width: 60px">
+								<label style="font-size: 18px"><b>Time:</b></label>
+								<input type="time" required style="margin-right: 10px"> to <input type="time" required style="margin-left: 10px">
 							</span>
 						<br><br>
 						<hr style="width: 95%; height: 2">
 							<div id="modal-bottom">
 								<label><b>Equipment Needed:</b></label><br><br>
 									<span class="equips_1">
-										<input type="checkbox" name="eq1">Microphone
+										<input type="checkbox" name="eq1">Microphone <br>
+										<input type="checkbox" name="eq5">DVD Player <br>
+										<input type="checkbox" name="eq9">Globes
 									</span>
 
 									<span class="equips_2">
-										<input type="checkbox" name="eq2">Speaker/Karaoke
+										<input type="checkbox" name="eq2">Karaoke <br>
+										<input type="checkbox" name="eq6">CD Player <br>
+										<input type="checkbox" name="eq10">Maps
 									</span>
 
 									<span class="equips_3">
-										<input type="checkbox" name="eq3">Projector
+										<input type="checkbox" name="eq3">Projector <br>
+										<input type="checkbox" name="eq7">Opaque Projector <br>
+										<input type="checkbox" name="eq11">Charts
 									</span>
 
 									<span class="equips_4">
-										<input type="checkbox" name="eq4">Computer
+										<input type="checkbox" name="eq4">Computer <br>
+										<input type="checkbox" name="eq8">Cassette Player <br>
+										<input type="checkbox" name="eq12">Models
 									</span>
 							</div>
-							<label><b></b></label>
+							<br>
+							<label><b>Remarks:</b></label> <br>
+							<textarea id="notes" cols="115" rows="3" placeholder="Purpose of Reservation/Number of Students/Other Concerns"></textarea>
 						</fieldset>
 					</div>
 
@@ -99,7 +104,6 @@
 				}
 			</script>
 		</div>
-
 		<!-- Navigation List -->
 		<nav class="nav-list">
 			<div class="nav-page">
@@ -108,7 +112,7 @@
 						<a href="../index.html">Home</a>
 					</li>
 					<li class="dropdown">
-						<a class="dropbtn">AVR - Viewing Rooms</a>
+						<a class="dropbtn">Viewing Rooms</a>
 							<div class="dropdown-content">
 								<p>Audio Visual Room:</p>
 									<a href="avr_viewroom_1.html" id="active1">Viewing Room 1</a>
@@ -135,8 +139,9 @@
 			</div>
 		</nav>
 
-		<h1><b><u>Viewing Room 1 Schedule:</u></b></h1>
-
+		<!-- Header Title -->
+		<h1><b><u>AVR 1 Schedule:</u></b></h1>
+		<!-- Schedule Table -->
 		<div class="sched">
 			<table border="1" cellspacing="0">
 				<tr>
@@ -149,52 +154,7 @@
 					<th id="sat">Saturday</th>
 				</tr>
 				<tr>
-					<td class="time">7:00 - 7:30</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>					
-				</tr>
-				<tr>
-					<td class="time">7:30 - 8:00</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>					
-				</tr>
-				<tr>
-					<td class="time">8:00 - 8:30</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>					
-				</tr>
-				<tr>
-					<td class="time">8:39 - 9:00</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>					
-				</tr>
-				<tr>
-					<td class="time">9:00 - 9:30</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>					
-				</tr>
-				<tr>
-					<td class="time">9:30 - 10:00</td>
+					<td class="time">7:00</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -203,7 +163,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">10:00 - 10:30</td>
+					<td class="time">7:30</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -212,7 +172,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">10:30 = 11:00</td>
+					<td class="time">8:00</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -221,7 +181,52 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">11:00 - 11:30</td>
+					<td class="time">8:30</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="time">9:00</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="time">9:30</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="time">10:00</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="time">10:30</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="time">11:00</td>
 					<td ></td>
 					<td></td>
 					<td></td>
@@ -230,17 +235,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">11:30 - 12:00</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				
-				<tr>
-					<td class="time">1:00 - 1:30</td>
+					<td class="time">11:30</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -249,7 +244,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">1:30 - 2:00</td>
+					<td class="time">12:00</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -258,17 +253,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">2:00 - 2:30</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-
-				<tr>
-					<td class="time">2:30 - 3:00</td>
+					<td class="time">1:00</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -277,7 +262,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">3:30 - 4:00</td>
+					<td class="time">1:30</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -286,7 +271,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">4:00 - 4:30</td>
+					<td class="time">2:00</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -295,7 +280,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">4:30 - 5:00</td>
+					<td class="time">2:30</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -304,7 +289,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">5:00 - 5:30</td>
+					<td class="time">3:00</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -313,7 +298,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">5:00 - 5:30</td>
+					<td class="time">3:30</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -322,7 +307,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">5:30 - 6:00</td>
+					<td class="time">4:00</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -331,7 +316,7 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">6:00 - 6:30</td>
+					<td class="time">4:30</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -340,7 +325,52 @@
 					<td></td>
 				</tr>
 				<tr>
-					<td class="time">6:30 - 7:00</td>
+					<td class="time">5:00</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="time">5:30</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="time">6:00</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="time">6:30</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="time">7:00</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="time">7:30</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -350,10 +380,9 @@
 				</tr>
 			</table>
 		</div>
-
+		<!-- Footer -->
 		<footer align="center">
-			<i>Copyright:</i>
-			<big>Richard Alphege A. Ravalo, RL</big> | IBED - Junior Librarian | Sacred Heart College of Lucena, Inc. |
+			<big>&copy; Richard Alphege A. Ravalo, RL</big> | IBED - Junior Librarian | Sacred Heart College of Lucena, Inc. |
 			(042) 710 3888 | (+63) 943 282 0995 | raravalo@up.edu.ph
 		</footer>
 		<!-- Live Reload Script -->

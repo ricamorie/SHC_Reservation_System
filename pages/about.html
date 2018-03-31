@@ -11,10 +11,12 @@
 		<!-- CSS code here -->
 		<link rel="stylesheet" href="../styles/main.css">
 		<link rel="stylesheet" href="../styles/modal.css">
+		<link rel="stylesheet" href="../styles/style_about.css">
 		<!-- JavaScript code here -->
 	</head>
 		<!-- Body Section Starts Here -->
 	<body background="../images/bgimage_1.png" id="bodybg">
+		<!-- Reservation Pop-Up -->
 		<div class="popup_res">
 			<div id="id01" class="modal">
 				<form class="modal-content animate" action="#">
@@ -41,45 +43,50 @@
 							<span id="name">
 								<label><b>Name:</b></label>
 								<input type="text" placeholder="Enter Name" id="namer"required>
-								<label type="text"><b>Teacher/Professor:</b></label>
+								<label><b>Teacher/Professor:</b></label>
 								<input type="text" placeholder="Teacher/Professor's Name" required>
 							</span>
 						<br><br>
-							<span class="resinfo">
-								<label style="font-size: 18px"><b>Reservation Date:</b></label>
-								<input type="date" required>
+							<span class="resinfo"">
+								<label style="font-size: 18px"><b>Date:</b></label>
+								<input type="date" required style="margin-right: 10px; width: 120px"> to <input type="date" required style="margin-left: 10px">
 							</span>
 
 							<span class="resinfo">
-								<label style="font-size: 18px"><b>Reservation Time:</b></label>
-								<input type="time" required>
-							</span>
-
-							<span class="resinfo">
-								<label style="font-size: 18px"><b>Number of Students:</b></label>
-								<input type="number" style="width: 60px">
+								<label style="font-size: 18px"><b>Time:</b></label>
+								<input type="time" required style="margin-right: 10px"> to <input type="time" required style="margin-left: 10px">
 							</span>
 						<br><br>
 						<hr style="width: 95%; height: 2">
 							<div id="modal-bottom">
 								<label><b>Equipment Needed:</b></label><br><br>
 									<span class="equips_1">
-										<input type="checkbox" name="eq1">Microphone
+										<input type="checkbox" name="eq1">Microphone <br>
+										<input type="checkbox" name="eq5">DVD Player <br>
+										<input type="checkbox" name="eq9">Globes
 									</span>
 
 									<span class="equips_2">
-										<input type="checkbox" name="eq2">Speaker/Karaoke
+										<input type="checkbox" name="eq2">Karaoke <br>
+										<input type="checkbox" name="eq6">CD Player <br>
+										<input type="checkbox" name="eq10">Maps
 									</span>
 
 									<span class="equips_3">
-										<input type="checkbox" name="eq3">Projector
+										<input type="checkbox" name="eq3">Projector <br>
+										<input type="checkbox" name="eq7">Opaque Projector <br>
+										<input type="checkbox" name="eq11">Charts
 									</span>
 
 									<span class="equips_4">
-										<input type="checkbox" name="eq4">Computer
+										<input type="checkbox" name="eq4">Computer <br>
+										<input type="checkbox" name="eq8">Cassette Player <br>
+										<input type="checkbox" name="eq12">Models
 									</span>
 							</div>
-							<label><b></b></label>
+							<br>
+							<label><b>Remarks:</b></label> <br>
+							<textarea id="notes" cols="115" rows="3" placeholder="Purpose of Reservation/Number of Students/Other Concerns"></textarea>
 						</fieldset>
 					</div>
 
@@ -97,7 +104,7 @@
 				}
 			</script>
 		</div>
-
+		<!-- Navigation List -->
 		<nav class="nav-list">
 			<div class="nav-page">
 				<ul>
@@ -135,13 +142,41 @@
 		<h1><b><u>About the site</u></b></h1>
 		<div class="body-content">
 			<span class="content">
-				<article>This project is originally conceptualized as an upgrade for the computerized library system of Sacred Heart College. Due to some constraints, the original concept hasn't materialized yet. </article>
+				<blockquote> Audio-Visual Services has always been one of the in-demand functions of a library. Having various function room/viewing rooms in the institution will upgrade the processes and the overall function of the library. This website will bridge the gap in the reservation function of the viewing rooms of Sacred Heart College from the two divisions of the library department which are: Audio-Visual Room & the Integrated Basic Education Department.</blockquote>
+			</span>
+
+			<hr style="height: 2px; width: 95%; border-radius: 5px 5px 5px 5px; border: 1px solid black; background-color: black">
+			
+			<h2>About the Creator:</h2>
+				<img src="../images/creator_img.jpg" alt="Smile kahit mainit! :D">
+			<span class="content_1">
+				<article> <br>
+					<b>Name:</b> Richard Alphege A. Ravalo, RL <br>
+					<b>Age:</b> 22 years old <br>
+					<b>Birthdate:</b> April 19, 1995 <br>
+					<b>Address:</b> Rodriguez Street, Barangay 4(Poblacion), Sariaya, Quezon <br>
+					<b>Contact Info:</b> richardravalo@icloud.com <i>or</i> raravalo@up.edu.ph <br>
+					<b>Educational Attainment:</b> <br>
+					<span style="margin-left: 40px;">
+						Master of Library and Information Science <i>(ongoing)</i> <br>
+					</span>
+					<span style="margin-left: 40px">
+						Bachelor of Library and Information Science <i>(2016)</i> <br>
+					</span>
+
+					<b>Schools Attended:</b> <br>
+					<span style="margin-left: 40px;">
+						Unversity of the Philippines - Diliman <i>(Graduate)</i> <br>
+					</span>
+					<span style="margin-left: 40px;">
+						Manuel S. Enverga Univerity Foundation <i>(Undergraduate)</i>	
+					</span>
+				</article>
 			</span>
 		</div>
 
 		<footer align="center">
-			<i>Copyright:</i> <br>
-			<big>Richard Alphege A. Ravalo, RL</big> | IBED - Junior Librarian | Sacred Heart College of Lucena, Inc. |
+			<big>&copy; Richard Alphege A. Ravalo, RL</big> | IBED - Junior Librarian | Sacred Heart College of Lucena, Inc. |
 			(042) 710 3888 | (+63) 943 282 0995 | raravalo@up.edu.ph
 		</footer>
 		<!-- Live Reload Script -->
