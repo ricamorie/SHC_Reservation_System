@@ -192,11 +192,11 @@ footer {
 /* Caption text */
 .text {
   color: black;
-  font-size: 18px;
+  font-size: 35px;
   padding: 4px 8px;
   position: absolute;
   max-width: 90%;
-  bottom: 10.8%;
+  bottom: 0;
   text-align: left;
   background-color: #A8A6A6;
 }
