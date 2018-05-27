@@ -1,5 +1,5 @@
 /*Input designs*/
-input[type=text] {
+input[type=text]:not(#uname) {
 	width: 36.7%;
 	text-align: center;
 	padding: 12px 20px;
@@ -63,7 +63,7 @@ input[type=text] {
 }
 
 .modal-content {
-	background-color: yellow;
+	background-color: white;
 	margin: 4% auto 0 auto;
 	border: 1px solid #888;
 	width: 65%;
@@ -84,4 +84,3 @@ input[type=text] {
 	from {transform: scale(0);}
 	to {transform: scale(1);}
 }
-

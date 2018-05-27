@@ -138,10 +138,10 @@ td {
 
 }
 
-td:hover:not(.time) {
+tr:hover:not(.notme) {
 	background-color: red;
 	transition: transform .4s;
-	transform: scale(1.2);
+	transform: scale(1);
 	color: white;
 	border: 0 solid black;
 	box-shadow: 0px 8px 16px 0px gray;

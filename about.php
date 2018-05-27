@@ -1,21 +1,30 @@
+<?php
+session_start();
+ 
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+  header("location: login.php");
+  exit;
+}
+?>
+
 <html>
 	<head>
 		<!-- Insert code for Title Icon and other descriptions for the website -->
-		<title>FAQs</title>
+		<title>About</title>
 		<!-- Site Description -->
 		<meta name="Description" content="An automated reservation syster for the Audio/Visual Services rendered by the Sacred Heart College of Lucena, Inc. developed by Richard Alphege A. Ravalo, RL" charset="UTF-8">
 		<!-- Responsive site code -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
 		<!-- Site Icon here -->
-		<link rel="icon" href="../images/262_files.ico" type="image/x-icon">
+		<link rel="icon" href="images/262_files.ico" type="image/x-icon">
 		<!-- CSS code here -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<link rel="stylesheet" href="../styles/style_faqs.css">
-		<link rel="stylesheet" href="../styles/modal.css">
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/modal.css">
+		<link rel="stylesheet" href="styles/style_about.css">
 		<!-- JavaScript code here -->
 	</head>
 		<!-- Body Section Starts Here -->
-	<body background="../images/bgimage_1.png" id="bodybg">
+	<body background="images/bgimage_1.png" id="bodybg">
 		<!-- Reservation Pop-Up -->
 		<div class="popup_res">
 			<div id="id01" class="modal">
@@ -109,10 +118,10 @@
 			<div class="nav-page">
 				<ul>
 					<li>
-						<a href="../index.html">Home</a>
+						<a href="index.php">Home</a>
 					</li>
 					<li class="dropdown">
-						<a href="view.php" class="dropbtn">Reservations</a>
+						<a href="avr_viewroom_1.php" class="dropbtn">Reservations</a>
 							<!--<div class="dropdown-content">
 								<p>Audio Visual Room:</p>
 									<a href="pages/avr_viewroom_1.html">Viewing Room 1</a>
@@ -128,68 +137,59 @@
 							</div>-->
 
 					</li>
-					<li>
-						<a href="about.html">About</a>
-					</li>
 					<li id="active">
-						<a href="faqs.html">FAQs</a>
+						<a href="about.php">About</a>
+					</li>
+					<li>
+						<a href="faqs.php">FAQs</a>
+					</li>
+					<li>
+						<a>|| &nbsp; &nbsp; Hi, <b><?php echo htmlspecialchars($_SESSION['username']); ?></b>. Welcome to our site.</a>
+					</li>
+					<li>
+						<a style="background-color: red;" href="goodbye.php"> Log Out</a>
 					</li>
 				</ul>
 				<button onclick="document.getElementById('id01').style.display='block'" id="resbtn">Reserve</button>
 			</div>
 		</nav>
-		
-		<!-- Start of Content -->
-		<h1 style="width: 60%"><b><u>Frequently Asked Questions:</u></b></h1>
-		<hr>
-		<div class="acc-content">
-			<button class="accordion">Q: Is there a specific rule with regards the reservation of the viewing rooms?</button>
-			<div class="panel">
-				<p>
-					<b>Answer:</b><br>
-					Yes, according to the rules that we have applied to the viewing rooms, it is generally, <b>3 days before</b> the actual date of use.
-				</p>
-			</div>
 
-			<button class="accordion">Q: Is there an alloted number of hours of use per professor/teacher?</button>
-			<div class="panel">
-				<p>
-					<b>Answer:</b><br>
-					We are currently looking this up for both sections conserned; but we are proposing: <br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>20 hrs per semester</b> for the HED <i>(Higher Education Department),</i> and <br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>30 hrs per School Year</b> for the IBED <i>(Integrated Basic Education Department).</i>
-				</p>
-			</div>
+		<h1><b><u>About the site</u></b></h1>
+		<div class="body-content">
+			<span class="content">
+				<blockquote> Audio-Visual Services has always been one of the in-demand functions of a library. Having various function room/viewing rooms in the institution will upgrade the processes and the overall function of the library. This website will bridge the gap in the reservation function of the viewing rooms of Sacred Heart College from the two divisions of the library department which are: Audio-Visual Room & the Integrated Basic Education Department.</blockquote>
+			</span>
 
-			<button class="accordion">Q: The reservation did not display</button>
-			<div class="panel">
-				<p>
-					<b>Answer:</b><br>
-					Retry the reservation for the schedule that has been input. (There might be an interruption with the connection.)
-				</p>
-			</div>
+			<hr style="height: 2px; width: 95%; border-radius: 5px 5px 5px 5px; border: 1px solid black; background-color: black">
+			
+			<h2>About the Creator:</h2>
+				<img src="images/creator_img.JPG" alt="Smile kahit mainit! :D">
+			<span class="content_1">
+				<article> <br>
+					<b>Name:</b> Richard Alphege A. Ravalo, RL <br>
+					<b>Age:</b> 23 years old <br>
+					<b>Birthdate:</b> April 19, 1995 <br>
+					<b>Address:</b> 629-A Cardinal Street, Goodyear Park Subdivision, Almanza Uno, Las Piñas City <br>
+					<b>Contact Info:</b> raravalo@up.edu.ph <i>or</i> richard.ravalo@dlszobel.edu.ph <br>
+					<b>Educational Attainment:</b> <br>
+					<span style="margin-left: 40px;">
+						Master of Library and Information Science <i>(ongoing)</i> <br>
+					</span>
+					<span style="margin-left: 40px">
+						Bachelor of Library and Information Science <i>(2016)</i> <br>
+					</span>
 
-			<button class="accordion">Q: Is there a limit on how many reservations can be recorded per faculty?</button>
-			<div class="panel">
-				<p>
-					<b>Answer:</b><br>
-					At the moment, NO, reserve to your heart's content. But do keep in mind that when this project would be implemented, all the data that has been recorded will be cleared and a limiting action would be considered.
-				</p>
-			</div>
-
-			<button class="accordion">Q: Why is there a different time allotment on the AVR and the IBED Viewing Rooms?</button>
-			<div class="panel">
-				<p>
-					<b>Answer:</b><br>
-					Because, the viewing rooms are located on different areas of the school and is managed by different areas (Basic Ed. and Higher Ed.). Therefore, the time allotment for each class in the viewing rooms would be different from each other.
-				</p>
-			</div>
+					<b>Schools Attended:</b> <br>
+					<span style="margin-left: 40px;">
+						Unversity of the Philippines - Diliman <i>(Graduate)</i> <br>
+					</span>
+					<span style="margin-left: 40px;">
+						Manuel S. Enverga Univerity Foundation <i>(Undergraduate)</i>	
+					</span>
+				</article>
+			</span>
 		</div>
 
-		<!-- Accordion JavaScript -->
-		<script src="../scripts/script_faqs.js"></script>
-
-		<!-- Footer -->
 		<footer align="center">
 			<big>&copy; Richard Alphege A. Ravalo, RL</big> | IBED - Junior Librarian | Sacred Heart College of Lucena, Inc. |
 			(042) 710 3888 | (+63) 943 282 0995 | raravalo@up.edu.ph

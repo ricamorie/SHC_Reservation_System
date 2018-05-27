@@ -1,3 +1,12 @@
+<?php
+session_start();
+ 
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+  header("location: login.php");
+  exit;
+}
+?>
+
 <html>
 	<head>
 		<!-- Insert code for Title Icon and other descriptions for the website -->
@@ -7,15 +16,15 @@
 		<!-- Responsive site code -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
 		<!-- Site Icon here -->
-		<link rel="icon" href="../images/262_files.ico" type="image/x-icon">
+		<link rel="icon" href="images/262_files.ico" type="image/x-icon">
 		<!-- CSS code here -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<link rel="stylesheet" href="../styles/style_faqs.css">
-		<link rel="stylesheet" href="../styles/modal.css">
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/style_faqs.css">
+		<link rel="stylesheet" href="styles/modal.css">
 		<!-- JavaScript code here -->
 	</head>
 		<!-- Body Section Starts Here -->
-	<body background="../images/bgimage_1.png" id="bodybg">
+	<body background="images/bgimage_1.png" id="bodybg">
 		<!-- Reservation Pop-Up -->
 		<div class="popup_res">
 			<div id="id01" class="modal">
@@ -109,10 +118,10 @@
 			<div class="nav-page">
 				<ul>
 					<li>
-						<a href="../index.html">Home</a>
+						<a href="index.php">Home</a>
 					</li>
 					<li class="dropdown">
-						<a href="view.php" class="dropbtn">Reservations</a>
+						<a href="avr_viewroom_1.php" class="dropbtn">Reservations</a>
 							<!--<div class="dropdown-content">
 								<p>Audio Visual Room:</p>
 									<a href="pages/avr_viewroom_1.html">Viewing Room 1</a>
@@ -129,10 +138,16 @@
 
 					</li>
 					<li>
-						<a href="about.html">About</a>
+						<a href="about.php">About</a>
 					</li>
 					<li id="active">
-						<a href="faqs.html">FAQs</a>
+						<a href="faqs.php">FAQs</a>
+					</li>
+					<li>
+						<a>|| &nbsp; &nbsp; Hi, <b><?php echo htmlspecialchars($_SESSION['username']); ?></b>. Welcome to our site.</a>
+					</li>
+					<li>
+						<a style="background-color: red;" href="goodbye.php"> Log Out</a>
 					</li>
 				</ul>
 				<button onclick="document.getElementById('id01').style.display='block'" id="resbtn">Reserve</button>
@@ -187,7 +202,7 @@
 		</div>
 
 		<!-- Accordion JavaScript -->
-		<script src="../scripts/script_faqs.js"></script>
+		<script src="scripts/script_faqs.js"></script>
 
 		<!-- Footer -->
 		<footer align="center">

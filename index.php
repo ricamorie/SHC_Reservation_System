@@ -1,3 +1,14 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// If session variable is not set it will redirect to login page
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+  header("location: login.php");
+  exit;
+}
+?>
+
 <html>
 	<head>
 		<!-- Insert code for Title Icon and other descriptions for the website -->
@@ -15,77 +26,75 @@
 	</head>
 	<!-- Body Section Starts Here -->
 	<body background="images/bgimage_1.png" id="bodybg" style="margin-top: 35px;">
-		<!-- Reservation Pop-Up -->
-		<div class="popup_res">
-			<div id="id01" class="modal">
-				<form class="modal-content animate" action="#">
+		<!-- Reservation Pop-Up -->			<div id="id01" class="modal">
+				<form class="modal-content animate" method="post" action="pages/add.php">
 					<div class="container">
 						<label><b>Date of Reservation:</b></label>
-						<input type="date" required autofocus style="font-weight: bold; font-size: 16px; width: 150px">
+						<input name="res_date" type="date" required autofocus style="font-weight: bold; font-size: 16px; width: 150px">
 						<span class="selection">
 							<label><b>Viewing Room:</b></label>
 							<select name="viewing_room" id="selector">
 								<option> - - Select Viewing Room - - </option>
-								<option value="avr_viewroom_1">AVR - Viewing Room 1</option>
-								<option value="avr_viewroom_2">AVR - Viewing Room 2</option>
-								<option value="avr_viewroom_3">AvR - Viewing Room 3</option>
-								<option value="avr_viewroom_4">AVR - Viewing Room 4</option>
-								<option value="avr_viewroom_5">AVR - Viewing Room 5</option>
-								<option value="avr_viewroom_6">AVR - Viewing Room 6</option>
-								<option value="ibed_viewroom_1">IBED - Viewing Room 1</option>
-								<option value="ibed_viewroom_2">IBED - Viewing Room 2</option>
-								<option value="ibed_viewroom_3">IBED - Viewing Room 3</option>
+								<option value="AVR - VR 1">AVR - Viewing Room 1</option>
+								<option value="AVR - VR 2">AVR - Viewing Room 2</option>
+								<option value="AVR - VR 3">AvR - Viewing Room 3</option>
+								<option value="AVR - VR 4">AVR - Viewing Room 4</option>
+								<option value="AVR - VR 5">AVR - Viewing Room 5</option>
+								<option value="AVR - VR 6">AVR - Viewing Room 6</option>
+								<option value="IBED - VR 1">IBED - Viewing Room 1</option>
+								<option value="IBED - VR 2">IBED - Viewing Room 2</option>
+								<option value="IBED - VR 3">IBED - Viewing Room 3</option>
 							</select>
 						</span>
 						<fieldset>
 							<legend>Reservation Info:</legend>
 							<span id="name">
 								<label><b>Name:</b></label>
-								<input type="text" placeholder="Enter Name" id="namer"required>
+								<input name="namer" type="text" placeholder="Enter Name" id="namer"required>
 								<label><b>Teacher/Professor:</b></label>
-								<input type="text" placeholder="Teacher/Professor's Name" required>
+								<input type="text" placeholder="Teacher/Professor's Name" name="teacher" required>
 							</span>
 						<br><br>
 							<span class="resinfo"">
 								<label style="font-size: 18px"><b>Date:</b></label>
-								<input type="date" required style="margin-right: 10px; width: 120px"> to <input type="date" required style="margin-left: 10px">
+								<input name="date_start" type="date" required style="margin-right: 10px; width: 120px"> to <input type="date" name="date_end" required style="margin-left: 10px">
 							</span>
 
 							<span class="resinfo">
 								<label style="font-size: 18px"><b>Time:</b></label>
-								<input type="time" required style="margin-right: 10px"> to <input type="time" required style="margin-left: 10px">
+								<input name="time_start" type="time" required style="margin-right: 10px"> to <input type="time" name="time_end" required style="margin-left: 10px">
 							</span>
 						<br><br>
 						<hr style="width: 95%; height: 2">
 							<div id="modal-bottom">
 								<label><b>Equipment Needed:</b></label><br><br>
 									<span class="equips_1">
-										<input type="checkbox" name="eq1">Microphone <br>
-										<input type="checkbox" name="eq5">DVD Player <br>
-										<input type="checkbox" name="eq9">Globes
+										<input type="checkbox" name="mic" value="Microphone">Microphone <br>
+										<input type="checkbox" name="dvd" value="DVD Player">DVD Player <br>
+										<input type="checkbox" name="globe" value="Globes">Globes
 									</span>
 
 									<span class="equips_2">
-										<input type="checkbox" name="eq2">Karaoke <br>
-										<input type="checkbox" name="eq6">CD Player <br>
-										<input type="checkbox" name="eq10">Maps
+										<input type="checkbox" name="karaoke" value="Karaoke">Karaoke <br>
+										<input type="checkbox" name="cd" value="CD Player">CD Player <br>
+										<input type="checkbox" name="maps" value="maps">Maps
 									</span>
 
 									<span class="equips_3">
-										<input type="checkbox" name="eq3">Projector <br>
-										<input type="checkbox" name="eq7">Opaque Projector <br>
-										<input type="checkbox" name="eq11">Charts
+										<input type="checkbox" name="proj" value="Projector">Projector <br>
+										<input type="checkbox" name="opaque" value="Opaque Projector">Opaque Projector <br>
+										<input type="checkbox" name="charts" value="Charts">Charts
 									</span>
 
 									<span class="equips_4">
-										<input type="checkbox" name="eq4">Computer <br>
-										<input type="checkbox" name="eq8">Cassette Player <br>
-										<input type="checkbox" name="eq12">Models
+										<input type="checkbox" name="comp" value="Computer">Computer <br>
+										<input type="checkbox" name="cass" value="Cassette Player">Cassette Player <br>
+										<input type="checkbox" name="model" value="Models">Models
 									</span>
 							</div>
 							<br>
 							<label><b>Remarks:</b></label> <br>
-							<textarea id="notes" cols="115" rows="3" placeholder="Purpose of Reservation/Number of Students/Other Concerns"></textarea>
+							<textarea id="notes" cols="115" rows="3" name="remarks" placeholder="Purpose of Reservation/Number of Students/Other Concerns"></textarea>
 						</fieldset>
 					</div>
 
@@ -103,16 +112,17 @@
 				}
 			</script>
 		</div>
+
 		<!-- Navigation List -->
 		<nav class="nav-list">
 			<div class="nav-page">
 				<ul>
 					<li id="active">
-						<a href="index.html">Home</a>
+						<a href="index.php">Home</a>
 					</li>
 					<li class="dropdown">
-						<a class="dropbtn">Viewing Rooms</a>
-							<div class="dropdown-content">
+						<a href="avr_viewroom_1.php" class="dropbtn">Reservations</a>
+							<!--<div class="dropdown-content">
 								<p>Audio Visual Room:</p>
 									<a href="pages/avr_viewroom_1.html">Viewing Room 1</a>
 									<a href="pages/avr_viewroom_2.html">Viewing Room 2</a>
@@ -124,14 +134,20 @@
 									<a href="pages/ibed_viewroom_1.html">Viewing Room 1</a>
 									<a href="pages/ibed_viewroom_2.html">Viewing Room 2</a>
 									<a href="pages/ibed_viewroom_3.html">Viewing Room 3</a>
-							</div>
+							</div>-->
 
 					</li>
 					<li>
-						<a href="pages/about.html">About</a>
+						<a href="about.php">About</a>
 					</li>
 					<li>
-						<a href="pages/faqs.html">FAQs</a>
+						<a href="faqs.php">FAQs</a>
+					</li>
+					<li>
+						<a>|| &nbsp; &nbsp; Hi, <b><?php echo htmlspecialchars($_SESSION['username']); ?></b>. Welcome to our site.</a>
+					</li>
+					<li>
+						<a style="background-color: red;" href="goodbye.php"> Log Out</a>
 					</li>
 				</ul>
 				<button onclick="document.getElementById('id01').style.display='block'" id="resbtn">Reserve</button>
@@ -140,33 +156,27 @@
 		
 		<!-- Slideshow container -->
 		<div class="slideshow-container">
-
 			<!-- Full-width images with number and caption text -->
 			<div class="mySlides fade">
 				<img src="images/slide/img01.JPG" style="width:100%;">
 				<div class="text">Viewing Room 1</div>
 			</div>
-
 			<div class="mySlides fade">
 				<img src="images/slide/img02.JPG" style="width:100%;">
 				<div class="text">Viewing Room 2</div>
 			</div>
-
 			<div class="mySlides fade">
 				<img src="images/slide/img03.JPG" style="width:100%;">
 				<div class="text">Viewing Room 3</div>
 			</div>
-
 			<div class="mySlides fade">
 				<img src="images/slide/img04.JPG" style="width:100%;">
 				<div class="text">Viewing Room 4</div>
 			</div>
-
 			<div class="mySlides fade">
 				<img src="images/slide/img05.JPG" style="width:100%;">
 				<div class="text">Viewing Room 5</div>
 			</div>
-
 			<div class="mySlides fade">
 				<img src="images/slide/img06.JPG" style="width:100%;">
 				<div class="text">Viewing Room 6</div>
@@ -188,14 +198,14 @@
 			<span class="dot" onclick="currentSlide(6)"></span>
 			<span class="dot" onclick="currentSlide(7)"></span>
 		</div>
-
 		<!-- Javascript for Image Slider -->
 		<script src="scripts/main.js"></script>
+
 		<!-- Footer -->
 		<footer style="display: none;">
 			<big>&copy; Richard Alphege A. Ravalo, RL</big> | IBED - Junior Librarian | Sacred Heart College of Lucena, Inc. |
 			(042) 710 3888 | (+63) 943 282 0995 | raravalo@up.edu.ph
-		</footer>
+		</footer>	
 		<!-- Live Reload Script -->
 		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	<!-- Body Section Ends Here -->
