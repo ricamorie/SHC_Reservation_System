@@ -14,7 +14,7 @@ include_once ('config.php');
 <h1>Update Reservation</h1>
 <br>
 <form action = "update_action.php" method="post" name = "updateform">
-	<table border="1" align="center" cellpadding="5" cellspacing="5">
+	<table border="1" align="center" style="background-color: white" cellpadding="5" cellspacing="5">
 		<tr>
 			<td>Name:</td>
 			<td><input type="text" name="res_name" style="width: 300px;" value="<?php print "{$row_array['res_name']}" ?>" readonly></TD>
