@@ -14,7 +14,7 @@ include ("avr_viewroom_2.php");
     <H1>UPDATE Reservation</H1>
     <br><br>
     <form action="update.php" method="POST" style="margin-top: 10px;">
-    <table width="" border="0" align="center" bgcolor="white" cellspacing="1" cellpadding="2" id="time">
+    <table width="" border="0" align="center" bgcolor="white" cellspacing="1" cellpadding="12" id="time" style="font-size: 20px;">
          <tr>
                <td width="200">Type your name to edit your reservation:</td>
                <td width="400">
